@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-const port = 8080;
+const port = 3000;
 // const server = app.listen(port, function() {
 //     console.log('Listening on ' + port);
 // });
@@ -13,7 +13,7 @@ const server = require('http').createServer(app);
 const SocketIO = require('socket.io');
 const io = SocketIO(server, {path : '/socket.io'});
 
-// root url 라우트 정의 - localhost:8080으로 서버 접속시 클라이언트에 index.html을 전송
+// root url 라우트 정의 - localhost:3000으로 서버 접속시 클라이언트에 index.html을 전송
 app.get('/', function (req, res) {
     res.sendFile(__dirname, '/index.html');
 });
